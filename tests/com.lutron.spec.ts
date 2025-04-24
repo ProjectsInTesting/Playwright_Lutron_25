@@ -1,7 +1,5 @@
 //Import playwright module
-import{test, expect} from '@playwright/test';
-import { assert } from 'console';
-
+import { test, expect } from '@playwright/test';
 
 // write a test 
 test('verify support link ', async ({ page }) => {
@@ -14,8 +12,7 @@ test('verify support link ', async ({ page }) => {
 
     // here a new page will be opened and we need to switch to that page
 
-    const pagePromise = page.context().waitForEvent('page');
-    const supportPage = await pagePromise;
+    const supportPage = await page.context().waitForEvent('page');
     await supportPage.waitForLoadState();
     await expect(supportPage.locator('h1')).toHaveText('Lutron Support Center');
 
@@ -24,29 +21,12 @@ test('verify support link ', async ({ page }) => {
     await supportPage.getByRole('textbox', { name: 'Search model #s or products' }).fill('ST-PRO-N');
     await supportPage.getByText('ST-PRO-N').click();
     await supportPage.getByRole('link', { name: 'Installation Guide' }).click();
-    await expect(supportPage.getByText('Sunnata PRO LED+ Dimmer -')).toBeVisible({ timeout: 5000 });
+    await expect(supportPage.getByText('Sunnata PRO LED+ Dimmer -')).toHaveText('Sunnata PRO LED+ Dimmer - Installation Guide');
 
     // Click to open Sunnata PRO LED+ Dimmer - Installation Guide PDF.
 
-    await supportPage.getByRole('list').filter({ hasText: 'Sunnata PRO LED+ Dimmer -' }).getByRole('link');
+    await supportPage.getByRole('list').filter({ hasText: 'Sunnata PRO LED+ Dimmer -' }).getByRole('link').click();
 
 
 
-
-
-
-
-
-
-
-
-    
-})
-
-//got to url
-
-// click on Support
-
-// search fot Sunnata dimmer product
-
-// click 
+});
