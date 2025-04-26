@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 // write a test 
 //test('verify support link ', async ({ page }) => {
 
-test('verify support link ', { tag: ['@Playwright_With_Jenkins'] }, async ({ page }) => {
+test('verify support link ', { tag: ['@Playwright_With_Jenkins_Practice'] }, async ({ page }) => {
 
     //navigating to the Website
 
@@ -32,7 +32,7 @@ test('verify support link ', { tag: ['@Playwright_With_Jenkins'] }, async ({ pag
 
 })
 
-test('verify commercial link',async ({ page }) => {
+test('verify commercial link', { tag: ['@Playwright_With_Jenkins_Practice']}, async ({ page }) => {
 
     // navigate to the website 
     await page.goto('https://www.lutron.com/us/en');
@@ -41,8 +41,16 @@ test('verify commercial link',async ({ page }) => {
     await page.getByRole('tabpanel', { name: 'Commercial' }).click();
     await expect(page.getByRole('dialog', { name: 'Lighting' }).getByLabel('Open Explore Commercial link')).toHaveText('Explore Commercial');
 
+})
 
-
+test('Test about us link', { tag: ['@Playwright_With_Jenkins_Practice']}, async ({ page }) => {
+    await page.goto('https://www.lutron.com/us/en');
+    const aboutUs = page.getByLabel('Main navigation').getByRole('menuitem', { name: 'About Us' });
+    await expect(aboutUs).toHaveText('About Us');
+    await aboutUs.click();
+    await page.getByLabel('Who We Are').click();
+    await expect(page.getByRole('heading', { name: 'Who We Are' })).toHaveText('Who We Are');
 
 })
+
 
