@@ -2,9 +2,9 @@
 import { test, expect } from '@playwright/test';
 
 // write a test 
-test('verify support link ', async ({ page }) => {
+//test('verify support link ', async ({ page }) => {
 
-//test('verify support link ', { tag: ['@Playwright_With_Jenkins'] }, async ({ page }) => {
+test('verify support link ', { tag: ['@Playwright_With_Jenkins'] }, async ({ page }) => {
 
     //navigating to the Website
 
@@ -30,5 +30,19 @@ test('verify support link ', async ({ page }) => {
     await expect(supportPage2).toHaveTitle('Sunnata ST-PRO-N Installation Instructions | Lutron');
     await supportPage2.getByRole('button', { name: 'Accept' }).click();
 
-   
-});
+})
+
+test('verify commercial link',async ({ page }) => {
+
+    // navigate to the website 
+    await page.goto('https://www.lutron.com/us/en');
+    await expect(page.getByRole('tab', { name: 'Commercial' })).toContainText('Commercial');
+    await page.getByRole('tab', { name: 'Commercial' }).click();
+    await page.getByRole('tabpanel', { name: 'Commercial' }).click();
+    await expect(page.getByRole('dialog', { name: 'Lighting' }).getByLabel('Open Explore Commercial link')).toHaveText('Explore Commercial');
+
+
+
+
+})
+
