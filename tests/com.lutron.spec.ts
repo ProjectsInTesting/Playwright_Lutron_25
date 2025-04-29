@@ -60,7 +60,7 @@ test('Test about us link', { tag: ['@Playwright_With_Jenkins_Practice'] }, async
     await expect(aboutUs).toHaveText('About Us');
     await aboutUs.click();
     await page.getByLabel('Who We Are').click();
-    await expect(page.getByRole('heading', { name: 'Who We Are' })).toHaveText('Who We Are');
+    await expect(page.getByRole('heading', { name: 'Who We Are' })).toHaveText('Who We Are***');
 
 })
 

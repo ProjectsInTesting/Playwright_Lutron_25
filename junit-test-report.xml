@@ -1,100 +1,56 @@
-<testsuites id="" name="" tests="9" failures="2" skipped="0" errors="0" time="113.45014900000001">
-<testsuite name="com.lutron.spec.ts" timestamp="2025-04-27T22:04:57.971Z" hostname="chromium" tests="3" failures="0" skipped="0" time="43.752" errors="0">
-<testcase name="verify support link " classname="com.lutron.spec.ts" time="21.878">
-</testcase>
-<testcase name="verify commercial link" classname="com.lutron.spec.ts" time="11.183">
-</testcase>
-<testcase name="Test about us link" classname="com.lutron.spec.ts" time="10.691">
-</testcase>
-</testsuite>
-<testsuite name="com.lutron.spec.ts" timestamp="2025-04-27T22:04:57.971Z" hostname="firefox" tests="3" failures="1" skipped="0" time="75.592" errors="0">
-<testcase name="verify support link " classname="com.lutron.spec.ts" time="37.988">
-<failure message="com.lutron.spec.ts:8:5 verify support link " type="FAILURE">
-<![CDATA[  [firefox] › com.lutron.spec.ts:8:5 › verify support link  @Playwright_With_Jenkins_Practice ──────
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="53.721254">
+<testsuite name="com.lutron.spec.ts" timestamp="2025-04-29T02:19:43.372Z" hostname="webkit" tests="3" failures="1" skipped="0" time="49.119" errors="0">
+<testcase name="verify support link" classname="com.lutron.spec.ts" time="21.059">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\com.lutron-verify-support-link-webkit\test-finished-2.png]]
 
-    Test timeout of 30000ms exceeded.
+[[ATTACHMENT|test-results\com.lutron-verify-support-link-webkit\test-finished-3.png]]
 
-    Error: locator.click: Test timeout of 30000ms exceeded.
+[[ATTACHMENT|test-results\com.lutron-verify-support-link-webkit\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="verify commercial link" classname="com.lutron.spec.ts" time="11.237">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\com.lutron-verify-commercial-link-webkit\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Test about us link" classname="com.lutron.spec.ts" time="16.823">
+<failure message="com.lutron.spec.ts:57:5 Test about us link" type="FAILURE">
+<![CDATA[  [webkit] › com.lutron.spec.ts:57:5 › Test about us link @Playwright_With_Jenkins_Practice ────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+
+    Locator: getByRole('heading', { name: 'Who We Are' })
+    Expected string: "Who We Are***"
+    Received string: "Who We Are"
     Call log:
-      - waiting for getByRole('button', { name: 'Accept' })
+      - expect.toHaveText with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Who We Are' })
+        5 × locator resolved to <h1 class="hero__tagline">Who We Are</h1>
+          - unexpected value "Who We Are"
 
 
-      30 |     await supportPage2.waitForLoadState();
-      31 |     await expect(supportPage2).toHaveTitle('Sunnata ST-PRO-N Installation Instructions | Lutron');
-    > 32 |     await supportPage2.getByRole('button', { name: 'Accept' }).click();
-         |                                                                ^
-      33 |
-      34 | })
-      35 |
-        at C:\Users\herra\Desktop\Playwright_Lutron.com\tests\com.lutron.spec.ts:32:64
+      61 |     await aboutUs.click();
+      62 |     await page.getByLabel('Who We Are').click();
+    > 63 |     await expect(page.getByRole('heading', { name: 'Who We Are' })).toHaveText('Who We Are***');
+         |                                                                     ^
+      64 |
+      65 | })
+      66 |
+        at C:\Users\herra\Desktop\Playwright_Lutron.com\tests\com.lutron.spec.ts:63:69
 
-    Error Context: ..\test-results\com.lutron-verify-support-link--firefox\error-context.md
-
-    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
-    test-results\com.lutron-verify-support-link--firefox\trace.zip
-    Usage:
-
-        npx playwright show-trace test-results\com.lutron-verify-support-link--firefox\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
+    Error Context: ..\test-results\com.lutron-Test-about-us-link-webkit\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\com.lutron-verify-support-link--firefox\error-context.md]]
-
-[[ATTACHMENT|test-results\com.lutron-verify-support-link--firefox\trace.zip]]
+[[ATTACHMENT|test-results\com.lutron-Test-about-us-link-webkit\error-context.md]]
 ]]>
 </system-out>
-</testcase>
-<testcase name="verify commercial link" classname="com.lutron.spec.ts" time="21.133">
-</testcase>
-<testcase name="Test about us link" classname="com.lutron.spec.ts" time="16.471">
-</testcase>
-</testsuite>
-<testsuite name="com.lutron.spec.ts" timestamp="2025-04-27T22:04:57.971Z" hostname="webkit" tests="3" failures="1" skipped="0" time="70.833" errors="0">
-<testcase name="verify support link " classname="com.lutron.spec.ts" time="32.848">
-<failure message="com.lutron.spec.ts:8:5 verify support link " type="FAILURE">
-<![CDATA[  [webkit] › com.lutron.spec.ts:8:5 › verify support link  @Playwright_With_Jenkins_Practice ───────
-
-    Test timeout of 30000ms exceeded.
-
-    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
-    =========================== logs ===========================
-      "domcontentloaded" event fired
-    ============================================================
-
-      28 |     //  a nother page will be opened and we need to switch to that page
-      29 |     const supportPage2 = await page.context().waitForEvent('page');
-    > 30 |     await supportPage2.waitForLoadState();
-         |                        ^
-      31 |     await expect(supportPage2).toHaveTitle('Sunnata ST-PRO-N Installation Instructions | Lutron');
-      32 |     await supportPage2.getByRole('button', { name: 'Accept' }).click();
-      33 |
-        at C:\Users\herra\Desktop\Playwright_Lutron.com\tests\com.lutron.spec.ts:30:24
-
-    Error Context: ..\test-results\com.lutron-verify-support-link--webkit\error-context.md
-
-    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
-    test-results\com.lutron-verify-support-link--webkit\trace.zip
-    Usage:
-
-        npx playwright show-trace test-results\com.lutron-verify-support-link--webkit\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\com.lutron-verify-support-link--webkit\error-context.md]]
-
-[[ATTACHMENT|test-results\com.lutron-verify-support-link--webkit\trace.zip]]
-]]>
-</system-out>
-</testcase>
-<testcase name="verify commercial link" classname="com.lutron.spec.ts" time="19.202">
-</testcase>
-<testcase name="Test about us link" classname="com.lutron.spec.ts" time="18.783">
 </testcase>
 </testsuite>
 </testsuites>
