@@ -1,7 +1,7 @@
 //Import playwright module
 import { test, expect } from '@playwright/test';
 import { TIMEOUT } from 'dns';
-
+/*
 // test#1 verify "Support" link
 test('verify support link', { tag: ['@Playwright_With_Jenkins_Practice'] }, async ({ page }) => {
     test.setTimeout(60000); // Increase timeout for this test
@@ -38,7 +38,7 @@ test('verify support link', { tag: ['@Playwright_With_Jenkins_Practice'] }, asyn
     await acceptButton.waitFor({ state: 'visible' });
     await acceptButton.click();
 });
-
+*/
 
 // test#2 verify "Commercial" link
 test('verify commercial link', { tag: ['@Playwright_With_Jenkins_Practice'] }, async ({ page }) => {

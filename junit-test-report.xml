@@ -1,26 +1,15 @@
-<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="53.721254">
-<testsuite name="com.lutron.spec.ts" timestamp="2025-04-29T02:19:43.372Z" hostname="webkit" tests="3" failures="1" skipped="0" time="49.119" errors="0">
-<testcase name="verify support link" classname="com.lutron.spec.ts" time="21.059">
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="22.502388000000035">
+<testsuite name="com.lutron.spec.ts" timestamp="2025-05-05T02:52:32.623Z" hostname="chromium" tests="2" failures="1" skipped="0" time="16.795" errors="0">
+<testcase name="verify commercial link" classname="com.lutron.spec.ts" time="4.515">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\com.lutron-verify-support-link-webkit\test-finished-2.png]]
-
-[[ATTACHMENT|test-results\com.lutron-verify-support-link-webkit\test-finished-3.png]]
-
-[[ATTACHMENT|test-results\com.lutron-verify-support-link-webkit\test-finished-1.png]]
+[[ATTACHMENT|test-results\com.lutron-verify-commercial-link-chromium\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="verify commercial link" classname="com.lutron.spec.ts" time="11.237">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\com.lutron-verify-commercial-link-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="Test about us link" classname="com.lutron.spec.ts" time="16.823">
+<testcase name="Test about us link" classname="com.lutron.spec.ts" time="12.28">
 <failure message="com.lutron.spec.ts:57:5 Test about us link" type="FAILURE">
-<![CDATA[  [webkit] › com.lutron.spec.ts:57:5 › Test about us link @Playwright_With_Jenkins_Practice ────────
+<![CDATA[  [chromium] › com.lutron.spec.ts:57:5 › Test about us link @Playwright_With_Jenkins_Practice ──────
 
     Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
 
@@ -30,7 +19,7 @@
     Call log:
       - expect.toHaveText with timeout 5000ms
       - waiting for getByRole('heading', { name: 'Who We Are' })
-        5 × locator resolved to <h1 class="hero__tagline">Who We Are</h1>
+        7 × locator resolved to <h1 class="hero__tagline">Who We Are</h1>
           - unexpected value "Who We Are"
 
 
@@ -43,12 +32,14 @@
       66 |
         at C:\Users\herra\Desktop\Playwright_Lutron.com\tests\com.lutron.spec.ts:63:69
 
-    Error Context: ..\test-results\com.lutron-Test-about-us-link-webkit\error-context.md
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\com.lutron-Test-about-us-link-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\com.lutron-Test-about-us-link-webkit\error-context.md]]
+[[ATTACHMENT|test-results\com.lutron-Test-about-us-link-chromium\test-failed-1.png]]
 ]]>
 </system-out>
 </testcase>
